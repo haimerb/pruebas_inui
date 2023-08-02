@@ -14,4 +14,15 @@ define("DB_PASS", "DeporvidaCdc1");
 define("DEFAULT_CONTROLLER", "paciente");
 define("DEFAULT_ACTION", "list");
 
+/**
+ * Control y definicines para la api
+ */
+define("DOMAIN","localhost");
+
+/**
+ * Definicion de carpetas del proyecto
+ */
+define("PROJECT_ROOT_PATH", __DIR__ . "/../");
+
+
 ?>

@@ -2,9 +2,20 @@
 require_once 'model/paciente.php';
 
 /**
- * @autor Haymer Barbeti
+ * @author Haymer Barbeti
+ * 
+ * 
  */
 class pacienteController{
+
+	private $id;
+	private $tipo_id;
+	private $nombre;
+	private $apellido;
+	private $telefono;
+	private $email;
+	private $genero;
+	
     public $page_title;
 	public $view;
     public $pacienteObj;
@@ -63,6 +74,9 @@ class pacienteController{
 		$this->view = 'delete_paciente';
 		return $this->pacienteObj->deletePacienteById($_POST["id"]);
 	}
+
+
+
 }
 
 ?>

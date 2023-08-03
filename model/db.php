@@ -1,6 +1,6 @@
 <?php 
 
-require_once './config/config.php';
+include_once '../config/config.php'; //solucionar el error del include
 
 /**
  * @autor Haymer Barbeti

@@ -1,9 +1,20 @@
 <?php 
 
 /**
- * @autor Haymer Barbeti
+ * @author Haymer Barbeti
+ * 
+ * 
  */
 class Paciente {
+
+	private $id;
+	private $tipo_id;
+	private $nombre;
+	private $apellido;
+	private $telefono;
+	private $email;
+	private $genero;
+	
 
 	private $table = 'inui.paciente';
 	private $conection;
@@ -11,6 +22,17 @@ class Paciente {
 	public function __construct() {
 		
 	}
+
+	public function constructOverload($id , $tipo_id, $nombre, $apellido, $telefono, $email, $genero) {
+		$this->id=$id;	
+		$this->tipo_id=$tipo_id;	
+		$this->nombre=$nombre;	
+		$this->apellido=$id;	
+		$this->telefono=$telefono;	
+		$this->email=$email;	
+		$this->genero=$genero;	
+	}
+
 
 	
 	/** 
@@ -114,6 +136,68 @@ class Paciente {
 		$stmt = $this->conection->prepare($sql);
 		return $stmt->execute([$id]);
 	}
+
+
+	public function set_id($id){
+		$this->id = $id;
+	 }
+
+	public function get_id(){
+		return $this->get_id();
+	 }
+
+
+
+	 public function set_tipo_id($tipo_id){
+		$this->tipo_id = $tipo_id;
+	 }
+
+	public function get_tipo_id(){
+		return $this->get_tipo_id();
+	 }
+
+	 public function set_nombre($nombre){
+		$this->nombre = $nombre;
+	 }
+
+	public function get_nombre(){
+		return $this->get_nombre();
+	 }
+
+
+
+	 public function set_apellido($apellido){
+		$this->apellido = $apellido;
+	 }
+
+	public function get_apellido(){
+		return $this->get_apellido();
+	 }
+
+
+	 public function set_telefono($telefono){
+		$this->telefono = $telefono;
+	 }
+
+	public function get_telefono(){
+		return $this->get_telefono();
+	 }
+
+	 public function set_email($email){
+		$this->email = $email;
+	 }
+
+	public function get_email(){
+		return $this->get_email();
+	 }
+
+	 public function set_genero($genero){
+		$this->genero = $genero;
+	 }
+
+	public function get_genero(){
+		return $this->get_genero();
+	 }
 
 }
 

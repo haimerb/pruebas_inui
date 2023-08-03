@@ -1,5 +1,9 @@
 <?php 
-
+/**
+ * @author Haymer Barbeti
+ * 
+ * 
+ */
 require_once 'config/config.php';
 
 require_once 'model/db.php';

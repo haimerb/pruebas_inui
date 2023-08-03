@@ -10,15 +10,9 @@ ini_set('memory_limit', '2000M');
  * Api base
  * Metodos: POST, PUT, GET etc
  * 
- */
-
-
-/**
  * @author Haymer Barbeti
  * 
- * 
  */
-
 $metodo = $_SERVER['REQUEST_METHOD'];
 $urlRequest = $_SERVER['REQUEST_URI'];
 $pathInfo = $_SERVER['PATH_INFO'];
@@ -61,10 +55,7 @@ if ($metodo == 'GET') {
             $email=$val['email'];
             $genero=$val['genero'];
 
-         
-
-            if($val['id']!=null&&$val['id']!=""){
-                //print_r( $val['id'] ." <br>");
+            if($val['id']!=null&&$val['id']!=""){            
                 array_push($arraySalida, array("id"=>$id,
                                             "tipo_id"=>$tipo_id,
                                             "nombre"=>$nombre,
@@ -75,7 +66,6 @@ if ($metodo == 'GET') {
                         );
             }
             
-
             $count+=$count+1;
         }
 
@@ -84,9 +74,7 @@ if ($metodo == 'GET') {
 
     }elseif($pathInfo == '/pacienteby')
     {
-        //echo ' Peticion Get para listar pacienteby por el path /pacienteby';
         $dbObj->conection;
-        //$result=new Paciente();
         $result =$pacienteObj->getPacienteById($_GET['id']);
         $_GET["response"] = true;
         
@@ -109,7 +97,7 @@ if ($metodo == 'GET') {
         print_r ( json_encode($objSalida));
 
     }else {
-        print_r(' Peticion GET hacia el path /paciente errada');
+        print_r('Peticion GET hacia los paths establecidos para el metodo GET errados');
     }
 
 }
@@ -118,14 +106,9 @@ if ($metodo == 'GET') {
  * Implementacion metodo POST y sus funciones
  */
 if ($metodo == 'POST') {
-    //implementar el metodo POST aqui
-    //echo "Metodo POST ";
-    
     if ($pathInfo == '/crearpaciente') {
-        //echo 'Peticion POST para crear un paciente por el path /crearpaciente';
         $dbObj->conection;
-        //++++++print_r($_POST['id']);
-
+        
         $data=array("id"=>$_REQUEST['id'],
                     "tipo_id"=>$_REQUEST['tipo_id'],
                     "nombre"=>$_REQUEST['nombre'],
@@ -134,8 +117,6 @@ if ($metodo == 'POST') {
                     "email"=>$_REQUEST['email'],
                     "genero"=>$_REQUEST['genero']);
 
-        print_r( $data);
-        //$id = $pacienteObj->save($_POST);
         $id = $pacienteObj->save($data);
 		$result = $pacienteObj->getPacienteById($id);
 		$_GET["response"] = true;
@@ -169,7 +150,7 @@ if ($metodo == 'POST') {
     }
     else 
     {
-        print_r('Peticion POST hacia los paths establecidos para el metodo POST erradios');
+        print_r('Peticion POST hacia los paths establecidos para el metodo POST errados');
     }
 
 }
@@ -186,16 +167,6 @@ if ($metodo == 'PUT') {
  */
 if ($metodo == 'DELETE') {
     //implementar el metodo DELETE aqui
-    //echo 'ingresa a DELETE';
-    if ($pathInfo == '/eliminarpacienteby') 
-    {
-        //echo 'ingresa a DELETE';
-        $dbObj->conection;
-        $result=$pacienteObj->deletePacienteById($_REQUEST['id']);
-        echo 'ingresa a DELETE '.$result;
-        $_GET["response"] = true;
-        print_r (json_encode($result));
-    }
 }
 
 

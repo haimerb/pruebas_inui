@@ -1,6 +1,9 @@
 <?php
-
 /**
+ * @author Haymer Barbeti
+ * 
+ * 
+ *
  * Valores de configuracion de bases de datos
  */
 define("DB_HOST", "postgreslunui.postgres.database.azure.com");
@@ -23,6 +26,7 @@ define("DOMAIN","localhost");
  * Definicion de carpetas del proyecto
  */
 define("PROJECT_ROOT_PATH", __DIR__ . "/../");
+
 
 
 ?>

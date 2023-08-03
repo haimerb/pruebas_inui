@@ -1,7 +1,9 @@
 <?php 
 
 /**
- * @autor Haymer Barbeti
+ * @author Haymer Barbeti
+ * 
+ * 
  */
 class Paciente {
 
